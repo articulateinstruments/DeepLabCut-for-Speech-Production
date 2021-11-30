@@ -1,0 +1,3 @@
+# These files contain logs which do not need to be tracked in version control.
+/log
+checkpoint

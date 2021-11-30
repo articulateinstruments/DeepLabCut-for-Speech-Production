@@ -1,0 +1,10 @@
+2021-11-08 12:47:29,559 INFO Shuffle index:1, net_type:mobilenet_v2_1.0, augmenter_type:imgaug, trainsetindex:0
+2021-11-08 12:48:32,050 INFO Shuffle index:1, net_type:mobilenet_v2_1.0, augmenter_type:imgaug, trainsetindex:0
+2021-11-08 12:53:12,871 INFO Shuffle index:1, net_type:mobilenet_v2_1.0, augmenter_type:imgaug, trainsetindex:0
+2021-11-08 12:56:45,617 INFO Shuffle index:1, net_type:mobilenet_v2_1.0, augmenter_type:imgaug, trainsetindex:0
+2021-11-08 13:10:34,300 INFO Shuffle index:1, net_type:mobilenet_v2_1.0, augmenter_type:imgaug, trainsetindex:0
+2021-11-08 13:27:33,971 INFO Shuffle index:1, net_type:mobilenet_v2_1.0, augmenter_type:imgaug, trainsetindex:0
+2021-11-13 19:15:12,032 INFO Shuffle index:1, net_type:mobilenet_v2_1.0, augmenter_type:imgaug, trainsetindex:0
+2021-11-13 19:21:36,043 INFO Shuffle index:1, net_type:mobilenet_v2_1.0, augmenter_type:imgaug, trainsetindex:0
+2021-11-19 23:58:58,928 INFO Shuffle index:0, net_type:resnet_50, augmenter_type:imgaug, trainsetindex:0
+2021-11-19 23:59:25,468 INFO Shuffle index:1, net_type:mobilenet_v2_1.0, augmenter_type:imgaug, trainsetindex:0

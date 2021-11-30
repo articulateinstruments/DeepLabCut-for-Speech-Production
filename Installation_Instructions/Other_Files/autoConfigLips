@@ -1,0 +1,135 @@
+    # Project definitions (do not edit)
+Task: Tal_Lips
+scorer: AW
+date: Jan28
+multianimalproject: false
+
+    # Project path (change when moving around)
+project_path: REPLACE_PATH
+
+    # Annotation data set configuration (and individual video cropping parameters)
+video_sets:
+  REPLACE_PATH\videos\LipTest_COMBINED_TEST.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\002_cal.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\005_xaud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\006_xaud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\018_xaud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\022_xaud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\042_sil.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\047_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\048_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\049_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\050_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\051_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\052_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\053_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\054_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\056_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\057_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\058_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\060_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\062_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\063_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\065_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\066_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\073_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\076_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\077_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\080_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\082_aud.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\087_aud.avi:
+    crop: 0, 320, 0, 240
+bodyparts:
+- leftLip
+- rightLip
+- topleftinner
+- bottomleftinner
+- topmidinner
+- bottommidinner
+- toprightinner
+- bottomrightinner
+start: 0
+stop: 1
+numframes2pick: 8
+
+    # Plotting configuration
+skeleton:
+- - rightLip
+  - toprightinner
+- - bottomleftinner
+  - bottommidinner
+- - bottommidinner
+  - bottomrightinner
+- - rightLip
+  - bottomrightinner
+- - topleftinner
+  - topmidinner
+- - topmidinner
+  - toprightinner
+- - topmidinner
+  - bottommidinner
+- - leftLip
+  - bottomleftinner
+- - topleftinner
+  - bottomleftinner
+- - leftLip
+  - topleftinner
+- - toprightinner
+  - bottomrightinner
+skeleton_color: black
+pcutoff: 0.6
+dotsize: 2
+alphavalue: 0.7
+colormap: plasma
+
+    # Training,Evaluation and Analysis configuration
+TrainingFraction:
+- 0.35
+iteration: 0
+default_net_type: resnet_50
+default_augmenter: imgaug
+snapshotindex: -1
+batch_size: 8
+
+    # Cropping Parameters (for analysis and outlier frame detection)
+cropping: false
+croppedtraining: false
+    #if cropping is true for analysis, then set the values here:
+x1: 0
+x2: 640
+y1: 277
+y2: 624
+
+    # Refinement configuration (parameters from annotation dataset configuration also relevant in this stage)
+corner2move2:
+- 50
+- 50
+move2corner: true

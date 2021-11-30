@@ -1,0 +1,139 @@
+    # Project definitions (do not edit)
+Task: SpeechProduction
+scorer: AW
+date: Feb12
+multianimalproject: false
+
+    # Project path (change when moving around)
+project_path: REPLACE_PATH
+    # Annotation data set configuration (and individual video cropping parameters)
+video_sets:
+  REPLACE_PATH\videos\UTI_Test_Set_COMBINED_ALL.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\TaL_1to8003.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\TaL_1to8004.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\TaL_1to8005.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\TaL_1to8006.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\TaL_1to8007.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\TaL_1to8008.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\TaL_1to8009.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\TaL_1to8010.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\TaL_1to8011.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\TaL_1to8012.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\ArticulateAnonymized_01.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\ArticulateAnonymized_02.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\ArticulateAnonymized_03.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\ArticulateAnonymized_04.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\ArticulateAnonymized_05.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\ArticulateAnonymized_06.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\ArticulateAnonymized_07.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\ArticulateAnonymized_08.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\ArticulateAnonymized_09.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\ArticulateAnonymized_10.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\ArticulateAnonymized_11.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\Ultrax_TD_001.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\Ultrax_TD_002.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\Ultrax_TD_003.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\Ultrax_TD_004.avi:
+    crop: 0, 320, 0, 240
+  REPLACE_PATH\videos\Video10.avi:
+    crop: 0, 320, 0, 240
+bodyparts:
+- vallecula
+- tongueRoot1
+- tongueRoot2
+- tongueBody1
+- tongueBody2
+- tongueDorsum1
+- tongueDorsum2
+- tongueBlade1
+- tongueBlade2
+- tongueTip1
+- tongueTip2
+- hyoid
+- mandible
+- shortTendon
+start: 0
+stop: 1
+numframes2pick: 20
+
+    # Plotting configuration
+skeleton:
+- - tongueRoot1
+  - tongueRoot2
+- - vallecula
+  - tongueRoot1
+- - tongueBlade1
+  - tongueBlade2
+- - tongueDorsum2
+  - tongueBlade1
+- - tongueBody2
+  - tongueDorsum1
+- - tongueDorsum1
+  - tongueDorsum2
+- - mandible
+  - shortTendon
+- - tongueBlade2
+  - tongueTip1
+- - tongueTip1
+  - tongueTip2
+- - tongueRoot2
+  - tongueBody1
+- - tongueBody1
+  - tongueBody2
+- - hyoid
+  - mandible
+skeleton_color: black
+pcutoff: 0.6
+dotsize: 3
+alphavalue: 0.7
+colormap: plasma
+
+    # Training,Evaluation and Analysis configuration
+TrainingFraction:
+- 0.34
+iteration: 0
+default_net_type: mobilenet_v2_1.0
+default_augmenter: imgaug
+snapshotindex: -1
+batch_size: 8
+
+    # Cropping Parameters (for analysis and outlier frame detection)
+cropping: false
+croppedtraining: false
+    #if cropping is true for analysis, then set the values here:
+x1: 0
+x2: 640
+y1: 277
+y2: 624
+
+    # Refinement configuration (parameters from annotation dataset configuration also relevant in this stage)
+corner2move2:
+- 50
+- 50
+move2corner: true
+identity:
