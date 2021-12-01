@@ -27,14 +27,12 @@ Where's the config.yaml file(s)?
 --------------------------------
 DeepLabCut stores metadata about a model in a file called config.yaml. You can't load a model into DLC without its config.yaml.
 
-Because this is a git repository anybody can get, you could clone/download it anywhere on your computer. A config.yaml file must contain absolute file-paths, which means the file-paths could be different for everybody who downloads this repository.
+Because this is a git repository anybody can get, you could clone/download it anywhere on your computer. These configuration files must contain absolute file-paths, which means the file-paths could be different for everybody who downloads this repository. To overcome this, the installation scripts provided in the folder [Installation_Instructions](Installation_Instructions) will automatically generate any appropriate configuration files for the models in this repository such that they contain the correct paths inside them for your computer.
 
-To overcome this, there is a script in the folder [Installation_Instructions](Installation_Instructions) called [Install_Config_Files.bat](Installation_Instructions/Install_Config_Files.bat). You need to run this script (eg. by double-clicking on it) which will automatically generate any appropriate config.yaml files for the models in this repository such that they contain the correct paths inside them for your computer.
-
-Once you have run the script once, appropriate config.yaml file(s) will be automatically created inside the model folders (eg. ".\Ultrasound\") for this local repository. You can now run DeepLabCut and use it to open a config.yaml file to use the corresponding model.
+Every time you run the script [Run_DeepLabCut.bat](Installation_Instructions/Run_DeepLabCut.bat) it will check if the configuration files area already installed, and if not it will install them. You can force an installation of the configuration files (overwriting any already present) by double-clicking on the script [Install_Config_Files.bat](Installation_Instructions/Install_Config_Files.bat).
 
 If you are not using Windows or for any reason it does not work correctly, instructions to do it manually are as follows:
-- Inside the folder [`.\Installation_Instructions`](Installation_Instructions) are files called [`auto[SOMETHING]`](Installation_Instructions/Other_Files/autoConfigUltrasound). Make a copy of each of these file(s) in the root folders of their corresponding models: for example, make a copy of `autoConfigUltrasound` inside `.\Ultrasound`, a copy of `autoPoseCfgLipsMobileNetTest` inside `.\Lips\dlc-models\iteration-0\Tal_LipsJan28-trainset35shuffle1\test`, etc. The corresponding folders are:
+- Inside the folder [`.\Installation_Instructions\Other_Files`](Installation_Instructions/Other_Files) are files called [`auto[SOMETHING]`](Installation_Instructions/Other_Files/autoConfigUltrasound). Make a copy of each of these file(s) in the root folders of their corresponding models: for example, make a copy of `autoConfigUltrasound` inside `.\Ultrasound`, a copy of `autoPoseCfgLipsMobileNetTest` inside `.\Lips\dlc-models\iteration-0\Tal_LipsJan28-trainset35shuffle1\test`, etc. The corresponding folders are:
     - Lips Shuffle 0 = ResNet 50
     - Lips Shuffle 1 = MobileNet 2_1.0
     - Ultrasound Shuffle 0 = ResNet 50
@@ -173,26 +171,26 @@ If your training has completed successfully, congratulations! You can now return
 -----------------------------------------------------------------
 How do I modify an existing model to train it on additional data?
 -----------------------------------------------------------------
-Before you proceed with this section, note that if you perform the following instructions it will irrecoverably modify the model(s) in this project which you are adding data to. You may wish to make a backup of the files in the `.\Lips` and/or `.\Ultrasound` folders now. 
+Before you proceed with this section, note that if you perform the following instructions it will irrecoverably modify the model(s) in this project which you are adding data to. You may wish to make a backup of the files in the `.\Lips` and/or `.\Ultrasound` folders now.
 
 There are two ways to add additional data to an existing model:
 1. Add one or more new videos to the project, label them, and add them to the dataset.
 2. Extract outlier frames from existing videos in the project, label them, and merge them back into the dataset.
 
 ### **Method 1 (adding new videos)**:
-If you have videos ready to add, you can keep them anywhere on your computer and still add them to the dataset without any extra work; if you want to you can put them in the same folder as the existing videos in the project, which can be found at the folders [.\Lips\videos](Lips/videos) and [.\Ultrasound\videos](Ultrasound/videos). 
+If you have videos ready to add, you can keep them anywhere on your computer and still add them to the dataset without any extra work; if you want to you can put them in the same folder as the existing videos in the project, which can be found at the folders [.\Lips\videos](Lips/videos) and [.\Ultrasound\videos](Ultrasound/videos).
 
 First load your DeepLabCut project, and in the `Manage Project` tab in DLC click `Load New Videos` and select the new videos you wish to add. You can multi-select videos and also repeat the process by clicking `Load New Videos` more times to stage further videos to add. When you have selected all the videos you want to add, click `Add New Videos`.
 
-Now click `Edit config file`. In this config.yaml you should see a list of file-paths to the videos in the project, under the heading `video_sets:`. Disable _(comment-out)_ all the video paths which are **NOT** your new videos by prefixing them with a `#` symbol, for example changing 
+Now click `Edit config file`. In this config.yaml you should see a list of file-paths to the videos in the project, under the heading `video_sets:`. Disable _(comment-out)_ all the video paths which are **NOT** your new videos by prefixing them with a `#` symbol, for example changing
 
     C:\DeepLabCut-for-Speech-Production\REPO\Lips\videos\002_cal.avi
 
-to 
+to
 
-    # C:\DeepLabCut-for-Speech-Production\REPO\Lips\videos\002_cal.avi 
+    # C:\DeepLabCut-for-Speech-Production\REPO\Lips\videos\002_cal.avi
 
-Similarly, disable the lines `crop: 0, 320, 0, 240` by prefixing them with a `#`. Then save the file, and return to DeepLabCut. 
+Similarly, disable the lines `crop: 0, 320, 0, 240` by prefixing them with a `#`. Then save the file, and return to DeepLabCut.
 
 Go to the tab `Extract frames` at the top and choose the settings you would like to use, then click `Ok`. You can click on the window called "IPython..." in your Windows task bar to watch the extraction progress. When it is finished, return to DeepLabCut and select the `Label frames` tab at the top. Click the button `Label Frames` on the right, then click the button `Load Frames` in the bottom-left to select the individual folders corresponding to your videos. Once you have loaded a folder, right-click to assign points and left-click-and-drag points around to reposition them. If you find the points too large or small to see visually you can adjust how they are displayed with the `Adjust marker size` slider (this is purely for visual clarity at this stage and does not affect training or analysis). You can zoom-in by clicking `Zoom` and then left-click-dragging a box over the region of the image to focus. To zoom-out click `Home`. Remember to click `Save` when you are finished labelling each batch of frames, then load the next folder to label, if you have more than one. Press the button `Quit` when you are finished.
 
