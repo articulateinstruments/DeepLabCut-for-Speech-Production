@@ -1,17 +1,26 @@
-_(Video below was made in [**AAA**](http://www.articulateinstruments.com/downloads/), software for speech articulatory analysis and recording by **Articulate Instruments**)_
+# Markerless pose estimation of speech articulators from ultrasound tongue images and lip video
 [![Speaker 20fs in the test set, included with this project](Installation_Instructions/Other_Files/Demo/demo.gif)](Installation_Instructions/Other_Files/Demo/demo.mp4?raw=true)
+
+These videos show the performance of the model on **speakers that were not included in the training set**. The video below also shows the performance on an **ultrasound system, probe geometry and framerate which were not represented in the training set**.
+
+The ultrasound model estimates the position of **11 keypoints along the tongue surface** plus a further 3 keypoints on the **hyoid**, **base of the mandible** and mental spine where **short tendon** attaches to mandible.
+
+_(The video above was made in [**AAA**](http://www.articulateinstruments.com/downloads/), software for speech articulatory analysis and recording by **Articulate Instruments**, using the pose-estimation models in this project trained using [**DeepLabCut**](https://github.com/DeepLabCut/DeepLabCut/) ([Mathis, A.](https://scholar.google.co.uk/citations?user=Y1xCzE0AAAAJ), [Mamidanna, P.](https://scholar.google.co.uk/citations?user=5x1hXY8AAAAJ), [Cury, K.M.](https://scholar.google.co.uk/citations?user=KpSNbF4AAAAJ) et al.). The video below was created using DeepLabCut's built-in video export)._
+
+[![Speaker DF in the test set, included with this project](Installation_Instructions/Other_Files/Demo/demo2.gif)](Installation_Instructions/Other_Files/Demo/demo2.mp4?raw=true)
+
 
 How to use this project
 -----------------------
-1. To download all the files needed to run this project, you can clone this repository: 
+1. To download all the files needed to run this project, you can clone this repository:
 
-    `git clone https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production.git` 
-    
+    `git clone https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production.git`
+
     or [click this link to download the project as a .zip file](https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production/archive/refs/heads/main.zip).
     _(737 MB download / 1.48 GB on disk)_
 
 2. [Click here for instructions on how to install DeepLabCut and run this project.](Installation_Instructions) _(DeepLabCut will be 2.97 GB on disk)_
-3. [Click here for instructions on how to use this project to analyse data](INSTRUCTIONS.md). 
+3. [Click here for instructions on how to use this project to analyse data](INSTRUCTIONS.md).
 
 Both guides contain detailed walk-throughs for people who are new to using DeepLabCut.
 
@@ -30,7 +39,7 @@ This repository contains:
 - [1 set of hand-labeled Lip test data](Lips/labeled-data/LipTest_COMBINED_TEST).
 
 
-Authors 
+Authors
 -------
 This research using DeepLabCut for speech production is by [Wrench, A.](https://scholar.google.com/citations?user=HQkwGZEAAAAJ) and Balch-Tomes, J. (2021).
 
