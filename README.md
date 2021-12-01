@@ -3,11 +3,11 @@ _(Video below was made in [**AAA**](http://www.articulateinstruments.com/downloa
 
 How to use this project
 -----------------------
-1. To download all the files needed to run this project, you can use git to run the command: 
+1. To download all the files needed to run this project, you can clone this repository: 
 
-    `git clone https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production/` 
+    `git clone https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production.git` 
     
-    or [click this link to download the project as a .zip file](https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production/archive/refs/heads/master.zip).
+    or [click this link to download the project as a .zip file](https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production/archive/refs/heads/main.zip).
     _(737 MB download / 1.48 GB on disk)_
 
 2. [Click here for instructions on how to install DeepLabCut and run this project.](Installation_Instructions) _(DeepLabCut will be 2.97 GB on disk)_
