@@ -59,7 +59,16 @@ The trained DLC model(s) provided in this repository are fully usable except for
 ------------------------------------------------------------
 How do I use an existing model to plot points on new videos?
 ------------------------------------------------------------
-Run DeepLabCut.
+This repository contains 4 pre-trained models:
+| Target        | Model        | Mean Accuracy MSD           | Training & Analysis Speed    | [`config.yaml`](#wheres-the-configyaml-files) to load        | Shuffle | 
+|:-------------:|:------------:|:---------------------------:|:----------------------------:|:------------------------------------------------------------:|:-------:|
+| Ultrasound    | ResNet50     | 0.**93** mm _(sd 0.**46**)_ | Slowest                      |`.\Ultrasound\config.yaml`                                    | `0`     |
+| Ultrasound    | MobileNet v2 | **1.06** mm _(sd 0.**59**)_ | **2.13**x faster             |`.\Ultrasound\config.yaml`                                    | `1`     |
+| Lips          | ResNet50     | 0.**71** mm _(sd 0.**54**)_ | Slowest                      |`.\Lips\config.yaml`                                          | `0`     |
+| Lips          | MobileNet v2 | 0.**73** mm _(sd 0.**52**)_ | **2.13**x faster             |`.\Lips\config.yaml`                                          | `1`     |
+
+---------------------
+First, run DeepLabCut.
 
 `Manage Project` -> `Load existing project` -> `Select the config file` (Browse for a .yaml file) -> `OK` -> `OK`
 
@@ -70,7 +79,9 @@ When you have loaded a config.yaml file you should see many tabs appear along th
 Select the tab `Analyze videos`.
 
 Click `Select videos to analyze` and select one or more videos in any of the following video file formats: .avi, .mp4, .mov. You can select multiple videos at once (eg. by
-holding the shift-key and clicking multiple videos). If you are using any of the pre-trained models for speech production in this Git repository, you should ensure that all videos you analyze are in a resolution of approximately 320x240 pixels for best results. A script is included called [`Convert_Video_to_320x240.bat`](Installation_Instructions/Convert_Video_to_320x240.bat) which you can drag-and-drop video files onto (including multiple at once) to convert them to 240px height and maintain the aspect ratio, thus making them a good size for optimal use with this model. DeepLabCut must be installed first for this to work.
+holding the shift-key and clicking multiple videos). Please now select the shuffle index corresponding to the model you wish to use, with reference to the [above table](#how-do-i-use-an-existing-model-to-plot-points-on-new-videos). 
+
+If you are using any of the pre-trained models for speech production in this Git repository, you should ensure that all videos you analyze are in a resolution of approximately 320x240 pixels for best results. If you are exporting from [AAA](http://www.articulateinstruments.com/downloads/), exporting a lower resolution will **NOT** degrade your data quality when re-importing splines from DLC. If you want to rescale existing videos, a script is included called [`Convert_Video_to_320x240.bat`](Installation_Instructions/Convert_Video_to_320x240.bat) which you can drag-and-drop video files onto (including multiple at once) to convert them to 240px height and maintain the aspect ratio, thus making them a good size for optimal use with this model. DeepLabCut must be installed first for this to work.
 
 DLC has several options visible at this stage which you should consider. For the purposes of simply plotting a tongue contour for each video frame, leave the options at their defaults. If you plan to import the output of the DLC analysis into AAA software, please set `Want to save result(s) as CSV?` to `Yes`.
 
