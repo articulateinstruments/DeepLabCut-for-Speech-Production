@@ -55,12 +55,27 @@ call powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.g
 
 @REM Fourth, create an Anaconda environment from the downloaded .yaml file by passing it as an argument to an environment creation.
 
-call conda env create -f "%~dp0Other_Files\official_environment.yml"
-call conda env update -f "%~dp0Other_Files\official_environment.yml"
+if exist "%~dp0Other_Files\official_environment.yml" (
+  copy /y "%~dp0Other_Files\official_environment.yml" "%~dp0Other_Files\backup_environment.yml"
+  call conda create -f "%~dp0Other_Files\official_environment.yml"
+  call conda env update -f "%~dp0Other_Files\official_environment.yml"
+) else (
+  echo:
+  echo Failed to download latest official DeepLabCut environment. Now using the last successful DeepLabCut environment instead.
+  echo It may be out of date and cannot update to the latest DeepLabCut version.
+  echo:
+  echo ^(If this happened because of a SSL/TLS secure channel error and you are running Windows 10, you probably need to install the latest Windows Updates.^)
+  echo:
+  call conda create -f "%~dp0Other_Files\backup_environment.yml"
+)
 
 @REM Fifth, activate the installed environment. Its environment name is set from the "name" property inside the downloaded .yaml file.
 
-for /f %%i in ('powershell -Command "(select-string -path '%~dp0Other_Files\official_environment.yml' -pattern 'name: (.*)').Matches.captures.groups[1].value"') do set envname=%%i
+if exist "%~dp0Other_Files\official_environment.yml" (
+  for /f %%i in ('powershell -Command "(select-string -path '%~dp0Other_Files\official_environment.yml' -pattern 'name: (.*)').Matches.captures.groups[1].value"') do set envname=%%i
+) else (
+  for /f %%i in ('powershell -Command "(select-string -path '%~dp0Other_Files\backup_environment.yml' -pattern 'name: (.*)').Matches.captures.groups[1].value"') do set envname=%%i
+)
 call conda activate %envname%
 
 @REM Finally, inside the Anaconda environment instance, open up an ipython or wxpython instance and run the following commands:

@@ -1,6 +1,6 @@
 To install DeepLabCut and run this project on Windows
 -----------------------------------------------------
-First, please **install [Anaconda](https://www.anaconda.com/products/individual)**.
+First, please **install [Anaconda](https://docs.conda.io/en/latest/miniconda.html)**.
 
 Second, if you have a Nvidia GPU then please **install the [CUDA drivers](https://developer.nvidia.com/cuda-downloads)**.
 
