@@ -94,4 +94,7 @@ echo ResNet50 encoder network model unpacked.
 echo:
 echo All files successfully installed^^!
 echo:
-pause
+if not "%1"=="nopause" (
+  echo Press any key to exit...
+  pause >nul
+)
