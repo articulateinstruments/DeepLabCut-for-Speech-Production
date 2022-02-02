@@ -41,6 +41,6 @@ This repository contains:
 
 Authors
 -------
-This research using DeepLabCut for speech production is by [Wrench, A.](https://scholar.google.com/citations?user=HQkwGZEAAAAJ) and Balch-Tomes, J. (2021).
+This research using DeepLabCut for speech production is by [Wrench, A.](https://scholar.google.com/citations?user=HQkwGZEAAAAJ) and Balch-Tomes, J. (2022) ([10.3390/s22031133](https://www.mdpi.com/1424-8220/22/3/1133)).
 
 DeepLabCut software was developed by [Mathis, A.](https://scholar.google.co.uk/citations?user=Y1xCzE0AAAAJ), [Mamidanna, P.](https://scholar.google.co.uk/citations?user=5x1hXY8AAAAJ), [Cury, K.M.](https://scholar.google.co.uk/citations?user=KpSNbF4AAAAJ) et al. (2018) ([10.1038/s41593-018-0209-y](https://www.nature.com/articles/s41593-018-0209-y)) with additional software by [Nath, T.](https://scholar.google.co.uk/citations?user=KXmpTjwAAAAJ), [Mathis, A.](https://scholar.google.co.uk/citations?user=Y1xCzE0AAAAJ) et al. (2019) ([10.1038/s41596-019-0176-0](https://www.nature.com/articles/s41596-019-0176-0)) and [Mathis, A.](https://scholar.google.co.uk/citations?user=Y1xCzE0AAAAJ), [Biasi T.](https://www.researchgate.net/profile/Thomas-Biasi) et al. (2021)
