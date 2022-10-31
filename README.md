@@ -1,5 +1,6 @@
 ## **You are currently viewing a more recent, improved training set** which expands on the research published in February 2022.
-### If you want to view the data originally provided with the paper _["Beyond the Edge: Markerless Pose Estimation of Speech Articulators from Ultrasound and Camera Images Using DeepLabCut"](https://www.mdpi.com/1424-8220/22/3/1133) by [Wrench, A.](https://scholar.google.com/citations?user=HQkwGZEAAAAJ) & Balch Tomes, J._ at the time of publication, then please [click here](https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production).
+- ### If you want to view the data originally provided with the paper _["Beyond the Edge: Markerless Pose Estimation of Speech Articulators from Ultrasound and Camera Images Using DeepLabCut"](https://www.mdpi.com/1424-8220/22/3/1133) by [Wrench, A.](https://scholar.google.com/citations?user=HQkwGZEAAAAJ) & Balch Tomes, J._ at the time of publication, then please [click here](https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production).
+- ### If you want to download the latest models for live-tracking and splining data in [_Articulate Assistant Advanced (AAA)_](http://www.articulateinstruments.com/downloads/) then please [click here](https://github.com/articulateinstruments/AAA-DeepLabCut-Resources).
 ---
 # Markerless pose estimation of speech articulators from ultrasound tongue images and lip video
 [![Speaker 20fs in the test set, included with this project](Installation_Instructions/Other_Files/Demo/demo.gif)](Installation_Instructions/Other_Files/Demo/demo.mp4?raw=true)
@@ -33,8 +34,8 @@ You do not need a GPU in your computer to use these models: you should be able t
 What this project contains
 --------------------------
 This repository contains:
-- 4 pre-trained models that are ready to use, specifically:
-    - [2 Ultrasound tongue surface, mandible, hyoid and short-tendon tracking models](Ultrasound/dlc-models/iteration-0), for use on midsaggital ultrasound videos where the tongue tip is to the right.
+- 5 pre-trained models that are ready to use, specifically:
+    - [3 Ultrasound tongue surface, mandible, hyoid and short-tendon tracking models](Ultrasound/dlc-models/iteration-0), for use on midsaggital ultrasound videos where the tongue tip is to the right.
     - [2 Lip tracking models](Lips/dlc-models/iteration-0), for use on front-facing videos of human lips.
 - [1 set of hand-labeled Ultrasound training data](Ultrasound/labeled-data).
 - [1 set of hand-labeled Lip training data](Lips/labeled-data).
