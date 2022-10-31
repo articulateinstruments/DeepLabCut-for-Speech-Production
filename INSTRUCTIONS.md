@@ -36,7 +36,8 @@ If you are not using Windows or for any reason it does not work correctly, instr
     - Lips Shuffle 0 = ResNet 50
     - Lips Shuffle 1 = MobileNet 2_1.0
     - Ultrasound Shuffle 0 = ResNet 50
-    - Ultrasound Shuffle 1 = MobileNet 2_1.0
+    - Ultrasound Shuffle 1 = MobileNet 2_1.0 _(original model provided at time of publication)_
+    - Ultrasound Shuffle 2 = MobileNet 2_1.0 _(new and improved model)_
 
     Next, rename the copies in the project roots to `config.yaml` and the copies in the model directories to `pose_cfg.yaml`.
 
@@ -59,13 +60,22 @@ The trained DLC model(s) provided in this repository are fully usable except for
 ------------------------------------------------------------
 How do I use an existing model to plot points on new videos?
 ------------------------------------------------------------
-This repository contains 4 pre-trained models:
-| Target        | Model        | Mean Accuracy MSD           | Training & Analysis Speed    | [`config.yaml`](#wheres-the-configyaml-files) to load        | Shuffle | 
-|:-------------:|:------------:|:---------------------------:|:----------------------------:|:------------------------------------------------------------:|:-------:|
-| Ultrasound    | ResNet50     | 0.**93** mm _(sd 0.**46**)_ | Slowest                      |`.\Ultrasound\config.yaml`                                    | `0`     |
-| Ultrasound    | MobileNet v2 | **1.06** mm _(sd 0.**59**)_ | **2.13**x faster             |`.\Ultrasound\config.yaml`                                    | `1`     |
-| Lips          | ResNet50     | 0.**71** mm _(sd 0.**54**)_ | Slowest                      |`.\Lips\config.yaml`                                          | `0`     |
-| Lips          | MobileNet v2 | 0.**73** mm _(sd 0.**52**)_ | **2.13**x faster             |`.\Lips\config.yaml`                                          | `1`     |
+This repository contains 5 pre-trained models:
+| Target        | Model                  | Mean Accuracy MSD           | Training & Analysis Speed    | [`config.yaml`](#wheres-the-configyaml-files) to load        | Shuffle |
+|:-------------:|:----------------------:|:---------------------------:|:----------------------------:|:------------------------------------------------------------:|:-------:|
+| Ultrasound    | ResNet50               | 0.**93** mm _(sd 0.**46**)_ | Slowest                      |`.\Ultrasound\config.yaml`                                    | `0`     |
+| Ultrasound    | MobileNet v2 Original  | **1.06** mm _(sd 0.**59**)_ | **2.13**x faster             |`.\Ultrasound\config.yaml`                                    | `1`     |
+| Ultrasound    | MobileNet v2 Rev 1.1.0 | _*(see below)_              | **2.13**x faster             |`.\Ultrasound\config.yaml`                                    | `2`     |
+| Lips          | ResNet50               | 0.**71** mm _(sd 0.**54**)_ | Slowest                      |`.\Lips\config.yaml`                                          | `0`     |
+| Lips          | MobileNet v2           | 0.**73** mm _(sd 0.**52**)_ | **2.13**x faster             |`.\Lips\config.yaml`                                          | `1`     |
+
+\* Accuracy for the _MobileNet v2 Revised 1.1.0_ is measured by comparing tongue surface points from the model to electromagnetic articulography. Pearson Correlation Coefficients for this are as follows:
+  - Tongue Tip X-axis    = 0.46
+  - Tongue Tip Y-axis    = 0.81
+  - Tongue Blade X-axis  = 0.59
+  - Tongue Blade Y-axis  = 0.88
+  - Tongue Dorsum X-axis = 0.67
+  - Tongue Dorsum Y-axis = 0.91
 
 ---------------------
 First, run DeepLabCut.
@@ -79,7 +89,7 @@ When you have loaded a config.yaml file you should see many tabs appear along th
 Select the tab `Analyze videos`.
 
 Click `Select videos to analyze` and select one or more videos in any of the following video file formats: .avi, .mp4, .mov. You can select multiple videos at once (eg. by
-holding the shift-key and clicking multiple videos). Please now select the shuffle index corresponding to the model you wish to use, with reference to the [above table](#how-do-i-use-an-existing-model-to-plot-points-on-new-videos). 
+holding the shift-key and clicking multiple videos). Please now select the shuffle index corresponding to the model you wish to use, with reference to the [above table](#how-do-i-use-an-existing-model-to-plot-points-on-new-videos).
 
 If you are using any of the pre-trained models for speech production in this Git repository, you should ensure that all videos you analyze are in a resolution of approximately 320x240 pixels for best results. If you are exporting from [AAA](http://www.articulateinstruments.com/downloads/), exporting a lower resolution will **NOT** degrade your data quality when re-importing splines from DLC. If you want to rescale existing videos, a script is included called [`Convert_Video_to_320x240.bat`](Installation_Instructions/Convert_Video_to_320x240.bat) which you can drag-and-drop video files onto (including multiple at once) to convert them to 240px height and maintain the aspect ratio, thus making them a good size for optimal use with this model. DeepLabCut must be installed first for this to work.
 

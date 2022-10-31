@@ -1,3 +1,22 @@
 # These files contain logs which do not need to be tracked in version control.
 /log
 checkpoint
+
+# The official_environment.yml is re-downloaded automatically from the official DeepLabCut repository when you run the Windows Batch script Run_DeepLabCut.bat
+Installation_Instructions/Other_Files/official_environment.yml
+
+# All config.yaml and pose_cfg.yaml files provided with this repository are generated automatically from corresponding files in .\Installation_Instructions\Other_Files to ensure that they contain appropriate file paths for your computer. Relative file paths do not work in DeepLabCut .yaml files, so correct absolute file paths must be generated using external means.
+config.yaml
+Lips/dlc-models/iteration-0/Tal_LipsJan28-trainset35shuffle0/test/pose_cfg.yaml
+Lips/dlc-models/iteration-0/Tal_LipsJan28-trainset35shuffle0/train/pose_cfg.yaml
+Lips/dlc-models/iteration-0/Tal_LipsJan28-trainset35shuffle1/test/pose_cfg.yaml
+Lips/dlc-models/iteration-0/Tal_LipsJan28-trainset35shuffle1/train/pose_cfg.yaml
+Ultrasound/dlc-models/iteration-0/SpeechProductionFeb12-trainset34shuffle0/test/pose_cfg.yaml
+Ultrasound/dlc-models/iteration-0/SpeechProductionFeb12-trainset34shuffle0/train/pose_cfg.yaml
+Ultrasound/dlc-models/iteration-0/SpeechProductionFeb12-trainset34shuffle1/test/pose_cfg.yaml
+Ultrasound/dlc-models/iteration-0/SpeechProductionFeb12-trainset34shuffle1/train/pose_cfg.yaml
+Ultrasound/dlc-models/iteration-0/SpeechProductionFeb12-trainset34shuffle2/test/pose_cfg.yaml
+Ultrasound/dlc-models/iteration-0/SpeechProductionFeb12-trainset34shuffle2/train/pose_cfg.yaml
+
+# Generated automatically by unzipping .\Installation_Instructions\Other_Files\resnet_v1_50.zip
+Dependencies/resnet_v1_50.ckpt

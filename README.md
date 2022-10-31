@@ -1,3 +1,6 @@
+## **You are currently viewing a more recent, improved training set** which expands on the research published in February 2022.
+### If you want to view the data originally provided with the paper _["Beyond the Edge: Markerless Pose Estimation of Speech Articulators from Ultrasound and Camera Images Using DeepLabCut"](https://www.mdpi.com/1424-8220/22/3/1133) by [Wrench, A.](https://scholar.google.com/citations?user=HQkwGZEAAAAJ) & Balch Tomes, J._ at the time of publication, then please [click here](https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production).
+---
 # Markerless pose estimation of speech articulators from ultrasound tongue images and lip video
 [![Speaker 20fs in the test set, included with this project](Installation_Instructions/Other_Files/Demo/demo.gif)](Installation_Instructions/Other_Files/Demo/demo.mp4?raw=true)
 

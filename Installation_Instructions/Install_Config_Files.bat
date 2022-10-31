@@ -77,6 +77,14 @@ set outputConfigPath=%ultrasoundFolderPath%\dlc-models\iteration-0\SpeechProduct
 powershell -Command "(gc '%inputConfigPath%') -replace 'REPLACE_PATH', '%ultrasoundFolderPath%' | Out-File -encoding ASCII '%outputConfigPath%'"
 echo Generated: Ultrasound ResNet50 Test pose_cfg.yaml
 
+if not exist "%ultrasoundFolderPath%\dlc-models\iteration-0\SpeechProductionFeb12-trainset34shuffle2\test" (
+  mkdir "%ultrasoundFolderPath%\dlc-models\iteration-0\SpeechProductionFeb12-trainset34shuffle2\test"
+)
+set inputConfigPath=%~dp0Other_Files\autoPoseCfgUSMobileNetTest_Rev_1_1_0
+set outputConfigPath=%ultrasoundFolderPath%\dlc-models\iteration-0\SpeechProductionFeb12-trainset34shuffle2\test\pose_cfg.yaml
+powershell -Command "(gc '%inputConfigPath%') -replace 'REPLACE_PATH', '%ultrasoundFolderPath%' | Out-File -encoding ASCII '%outputConfigPath%'"
+echo Generated: Ultrasound MobileNetv2_1.0 Revision 1.1.0 Test pose_cfg.yaml
+
 set inputConfigPath=%~dp0Other_Files\autoPoseCfgUSMobileNetTrain
 set outputConfigPath=%ultrasoundFolderPath%\dlc-models\iteration-0\SpeechProductionFeb12-trainset34shuffle1\train\pose_cfg.yaml
 powershell -Command "(gc '%inputConfigPath%') -replace 'REPLACE_PATH', '%ultrasoundFolderPath%' | Out-File -encoding ASCII '%outputConfigPath%'"
@@ -86,6 +94,11 @@ set inputConfigPath=%~dp0Other_Files\autoPoseCfgUSResNetTrain
 set outputConfigPath=%ultrasoundFolderPath%\dlc-models\iteration-0\SpeechProductionFeb12-trainset34shuffle0\train\pose_cfg.yaml
 powershell -Command "(gc '%inputConfigPath%') -replace 'REPLACE_PATH', '%ultrasoundFolderPath%' | Out-File -encoding ASCII '%outputConfigPath%'"
 echo Generated: Ultrasound ResNet50 Train pose_cfg.yaml
+
+set inputConfigPath=%~dp0Other_Files\autoPoseCfgUSMobileNetTrain_Rev_1_1_0
+set outputConfigPath=%ultrasoundFolderPath%\dlc-models\iteration-0\SpeechProductionFeb12-trainset34shuffle2\train\pose_cfg.yaml
+powershell -Command "(gc '%inputConfigPath%') -replace 'REPLACE_PATH', '%ultrasoundFolderPath%' | Out-File -encoding ASCII '%outputConfigPath%'"
+echo Generated: Ultrasound MobileNetv2_1.0 Revision 1.1.0 Train pose_cfg.yaml
 
 powershell -Command "& {Expand-Archive -Force -LiteralPath '%~dp0Other_Files\resnet_v1_50.zip' -DestinationPath '%~dp0..\Dependencies'}"
 echo:

@@ -1,3 +1,4 @@
+# If you edit the CSV you need to re-generate the corresponding H5 file by running this Python file.
 
 import pandas as pd
 
