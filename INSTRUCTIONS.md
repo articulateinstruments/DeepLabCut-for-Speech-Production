@@ -35,8 +35,10 @@ If you are not using Windows or for any reason it does not work correctly, instr
 - Inside the folder [`.\Installation_Instructions\Other_Files`](Installation_Instructions/Other_Files) are files called [`auto[SOMETHING]`](Installation_Instructions/Other_Files/autoConfigUltrasound). Make a copy of each of these file(s) in the root folders of their corresponding models: for example, make a copy of `autoConfigUltrasound` inside `.\Ultrasound`, a copy of `autoPoseCfgLipsMobileNetTest` inside `.\Lips\dlc-models\iteration-0\Tal_LipsJan28-trainset35shuffle1\test`, etc. The corresponding folders are:
     - Lips Shuffle 0 = ResNet 50
     - Lips Shuffle 1 = MobileNet 2_1.0
+    - Lips Shuffle 2 = MobileNet 2_1.0 with revised labelling and increase number of images from new videos.
     - Ultrasound Shuffle 0 = ResNet 50
     - Ultrasound Shuffle 1 = MobileNet 2_1.0
+    - Ultrasound Shuffle 2 = MobileNet 2_1.0 with revised labelling and increase number of images from new videos. **Will only work with tongue tip on right.**
 
     Next, rename the copies in the project roots to `config.yaml` and the copies in the model directories to `pose_cfg.yaml`.
 
@@ -64,8 +66,10 @@ This repository contains 4 pre-trained models:
 |:-------------:|:------------:|:---------------------------:|:----------------------------:|:------------------------------------------------------------:|:-------:|
 | Ultrasound    | ResNet50     | 0.**93** mm _(sd 0.**46**)_ | Slowest                      |`.\Ultrasound\config.yaml`                                    | `0`     |
 | Ultrasound    | MobileNet v2 | **1.06** mm _(sd 0.**59**)_ | **2.13**x faster             |`.\Ultrasound\config.yaml`                                    | `1`     |
+| Ultrasound    | MobileNet v2 | improved accuracy           | "                            |`.\Ultrasound\config.yaml`                                    | `2`     |
 | Lips          | ResNet50     | 0.**71** mm _(sd 0.**54**)_ | Slowest                      |`.\Lips\config.yaml`                                          | `0`     |
 | Lips          | MobileNet v2 | 0.**73** mm _(sd 0.**52**)_ | **2.13**x faster             |`.\Lips\config.yaml`                                          | `1`     |
+| Lips          | MobileNet v2 | 0improved accuracy          | "                            |`.\Lips\config.yaml`                                          | `2`     |
 
 ---------------------
 First, run DeepLabCut.
