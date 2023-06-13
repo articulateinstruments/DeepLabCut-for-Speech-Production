@@ -21,6 +21,7 @@ How to use this project
 
 2. [Click here for instructions on how to install DeepLabCut and run this project.](Installation_Instructions) _(DeepLabCut will be 2.97 GB on disk)_
 3. [Click here for instructions on how to use this project to analyse data](INSTRUCTIONS.md).
+Note: Shuffle2 Lip and Ultrasound models are trained using revised labelling and significantly more images from new recordings.  Results are best with these models.
 
 Both guides contain detailed walk-throughs for people who are new to using DeepLabCut.
 
@@ -30,9 +31,9 @@ You do not need a GPU in your computer to use these models: you should be able t
 What this project contains
 --------------------------
 This repository contains:
-- 4 pre-trained models that are ready to use, specifically:
-    - [2 Ultrasound tongue surface, mandible, hyoid and short-tendon tracking models](Ultrasound/dlc-models/iteration-0), for use on midsaggital ultrasound videos where the tongue tip is to the right.
-    - [2 Lip tracking models](Lips/dlc-models/iteration-0), for use on front-facing videos of human lips.
+- 6 pre-trained models that are ready to use, specifically:
+    - [3 Ultrasound tongue surface, mandible, hyoid and short-tendon tracking models](Ultrasound/dlc-models/iteration-0), for use on midsaggital ultrasound videos where the tongue tip is to the right.
+    - [3 Lip tracking models](Lips/dlc-models/iteration-0), for use on front-facing videos of human lips.
 - [1 set of hand-labeled Ultrasound training data](Ultrasound/labeled-data).
 - [1 set of hand-labeled Lip training data](Lips/labeled-data).
 - [1 set of hand-labeled Ultrasound test data](Ultrasound/labeled-data/UTI_Test_Set_COMBINED_ALL).
